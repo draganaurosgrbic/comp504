@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Shapes</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/view.js"></script>
+
+    <style>
+        body {
+            border: 2px solid black;
+        }
+
+        div.help{
+            padding: 1em;
+            color: darkgray;
+            background-color: lightgoldenrodyellow;
+            text-align: center;
+        }
+        
+        div.buttons {
+            height: 3em;
+            background-color: lightgray;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="help">
+        Welcome to shapes world! Click on buttons in order to create a specific shape! Enjoy!
+    </div>
+    <div class="buttons">
+        <button id="btn-circle" title="Click to add new Circle">Circle</button>
+        <button id="btn-triangle" title="Click to add new Triangle">Triangle</button>
+        <button id="btn-square" title="Click to add new Square">Square</button>
+        <button id="btn-rectangle" title="Click to add new Rectangle">Rectangle</button>
+        <button id="btn-complex" title="Click to add new Complex Shape">Complex</button>
+        <button id="btn-clear" title="Click to clear all shapes">Clear</button>
+    </div>
+    <canvas></canvas>
+</body>
+</html>
