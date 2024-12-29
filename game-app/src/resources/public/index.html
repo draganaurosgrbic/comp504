@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/pacman.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-buzz.js"></script>
+        <script type="text/javascript" src="js/board.js"></script>
+		<script type="text/javascript" src='js/Cell.js'></script>
+		<script type="text/javascript" src='js/game.js'></script>
+		<script type="text/javascript" src='js/pacman.js'></script>
+		<script type="text/javascript" src='js/ghost.js'></script>
+		<script type="text/javascript" src='js/music.js'></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                    initGame();
+
+                    // music
+                    loadMusic();
+                    document.onkeydown = function(e) {
+                        bgSound();
+                        startGame();
+                    };
+
+                    $(".sound").click(function(e) { 
+                        e.stopPropagation();
+                        
+                        var sound = $(this).attr("data-sound");
+                        if ( sound === "on" ) { 
+                            $(".sound").attr("data-sound", "off");
+                            $(".sound").find("img").attr("src", "./js/assets/sound-off.png");
+                            GROUP_SOUND.mute();
+                        } else { 
+                            $(".sound").attr("data-sound", "on");
+                            $(".sound").find("img").attr("src", "./js/assets/sound-on.png");
+                            GROUP_SOUND.unmute();
+                        }
+                    });
+            };
+        </script>
+    </head>
+    <body>
+        <h1>PA<canvas id="canvas-panel-title-pacman"></canvas>MAN</h1>
+        <div id="panel">
+            <div id="control">
+                <h2>Current Level</h2>
+                <div class="level" id="level1">Level 1</div>
+                <div class="level" id="level2">Level 2</div>
+                <div class="level" id="level3">Level 3</div>
+                <div id="slide">
+                    <div>Brightness</div>
+                    <input type="range" id="brightness" min="0" max="1" value="1" step="0.01" />
+                </div>
+                <div id="slide">
+                    <div>Number of Ghosts</div>
+                    <input type="range" id="ghosts" min="4" max="6" value="4" step="1" />
+                    <div id="ghosts-num" style="margin-left: 10px;">4</div>
+                </div>
+            </div>
+            <div id="board">
+                <div id="info">
+                    <div>Score: <span id="score">0</span></div>
+                    <div id="system-info"></div>
+                    <div style="display: flex;">
+                        <div>Lives: <span id="lives">3</span></div>
+                        <a class="sound" href="javascript:void(0);" data-sound="on"><img width="28px" height="28px" src="./js/assets/sound-on.png" alt="" border="0"></a>
+                    </div>
+                </div>
+                <div id="mask">
+                    <canvas id="canvas-board"></canvas>
+                </div>
+                <div id="message"></div>
+            </div>
+            <div id="help">
+                <h2 class="help">- help -</h2>
+                <div class="control">
+                    <span class="key">AnyKey :</span>
+                    <span class="action">START GAME</span>
+                </div>
+                <div class="control">
+                    <span class="key">Esc :</span>
+                    <span class="action">EXIT GAME</span>
+                </div>
+                <div class="control">
+                    <span class="key">ARROW LEFT :</span>
+                    <span class="action">MOVE LEFT</span>
+                </div>
+                <div class="control">
+                    <span class="key">ARROW RIGHT :</span>
+                    <span class="action">MOVE RIGHT</span>
+                </div>
+                <div class="control">
+                    <span class="key">ARROW DOWN :</span>
+                    <span class="action">MOVE DOWN</span>
+                </div>
+                <div class="control">
+                    <span class="key">ARROW UP :</span>
+                    <span class="action">MOVE UP</span>
+                </div>
+                <div class="control">
+                    <span class="key">P :</span>
+                    <span class="action">PAUSE</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
