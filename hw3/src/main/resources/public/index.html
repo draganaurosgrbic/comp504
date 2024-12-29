@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ball World</title>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/view.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="toolbar">
+        <div>
+            <div>
+                <span>Select ball type/movement strategy: </span>
+                <button id="btn-load">Load Selected Ball</button>
+            </div>
+            <div>
+                <select id="select-strategy">
+                    <option value="horizontal">horizontal line</option>
+                    <option value="vertical">vertical line</option>
+                    <option value="diagonal">diagonal line</option>
+                    <option value="rotating">rotating circle</option>
+
+                    <option value="stairs">stairs</option>
+                    <option value="waterfall">waterfall</option>
+                    <option value="pulse">pulse</option>
+                    <option value="zig_zag">zig zag</option>
+                    <option value="inverted_squares">inverted squares</option>
+                    <option value="inverted_trapezoids">inverted trapezoids</option>
+
+                    <option value="square">square movement</option>
+                    <option value="rhombus">rhombus movement</option>
+                </select>
+                <button id="btn-remove">Remove Selected Category</button>
+            </div>
+        </div>
+        <button id="btn-clear">Clear Canvas</button>
+    </div>
+
+    <canvas></canvas>
+</body>
+</html>
