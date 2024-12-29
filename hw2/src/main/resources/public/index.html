@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Shapes</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/drawing.js"></script>
+    <script src="js/view.js"></script>
+</head>
+<body>
+    <div class="help">
+        Welcome to shapes world! Enjoy!
+    </div>
+    <div class="menu">
+        <div class="drawing-menu">
+            <div>
+                <div>
+                    <span>Elementary shape:</span>
+                    <select id="select-shapes">
+                        <option>circle</option>
+                        <option>rhombus</option>
+                        <option>pentagon</option>
+                        <option>hexagon</option>
+                        <option>octagon</option>
+
+                        <option>triangle</option>
+                        <option value="right_triangle">right triangle</option>
+                        <option>parallelogram</option>
+
+                        <option>house</option>
+                        <option>trapezoid</option>
+                        <option>kite</option>
+
+                        <option>star</option>
+                        <option>cross</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Category:</span>
+                    <select id="select-type">
+                        <option>single</option>
+                        <option>matrix</option>
+                        <option>frame</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>Matrix size:</span>
+                    <input id="input-size" type="number" value="4" min="3" max="8"/>
+                </div>
+                <div>
+                    <span>One color:</span>
+                    <input id="checkbox-color" type="checkbox"/>
+                </div>
+            </div>
+            <div>
+                <button id="btn-draw">Draw</button>
+            </div>
+        </div>
+        <button id="btn-clear">Clear</button>
+    </div>
+    <canvas></canvas>
+</body>
+</html>

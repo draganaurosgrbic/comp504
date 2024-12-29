@@ -1,0 +1,48 @@
+body {
+    border: 2px solid black;
+}
+
+div.help {
+    background-color: lightgoldenrodyellow;
+    color: darkgray;
+    padding: 1em;
+    text-align: center;
+}
+
+div.menu {
+    height: 6em;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.drawing-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.drawing-menu > div {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+div.drawing-menu > div > div {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.drawing-menu > div > div > span {
+    margin-right: 1em;
+}
+
+div.drawing-menu > div > div > select {
+    width: 10em;
+}
