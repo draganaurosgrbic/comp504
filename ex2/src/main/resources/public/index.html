@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Shapes</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/view.js"></script>
+
+    <style>
+        body {
+            border: 2px solid black;
+        }
+        
+        div.buttons {
+            height: 3em;
+            background-color: lightgray;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button id="btn-circle">Circle</button>
+        <button id="btn-triangle">Triangle</button>
+        <button id="btn-square">Square</button>
+        <button id="btn-rectangle">Rectangle</button>
+        <button id="btn-complex">Complex</button>
+        <button id="btn-clear">Clear</button>
+    </div>
+    <canvas></canvas>
+</body>
+</html>
