@@ -1,0 +1,75 @@
+div.canvas {
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid black;
+    width: 95%;
+}
+
+div.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+}
+
+div.toolbar > div {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+div.toolbar > div:nth-child(1) {
+    flex: 2;
+}
+
+div.toolbar > div:nth-child(3) {
+    flex: 1;
+}
+
+div.toolbar > div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.toolbar > div > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 0.5em;
+}
+
+div.toolbar > div > div:not(.switch-strategy) > span {
+    width: 13em;
+}
+
+div.toolbar > div:nth-child(3) > div > span {
+    width: 15em;
+}
+
+div.toolbar > div > div > select {
+    flex: 1;
+}
+
+div.toolbar > div:first-child > div > select {
+    width: 16em;
+}
+
+div.switch-strategy > input[type='checkbox'] {
+    margin-left: 1em;
+}
+
+div.warning {
+    color: blue;
+}

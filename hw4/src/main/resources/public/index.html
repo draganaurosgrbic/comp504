@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint World</title>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/drawing.js"></script>
+    <script src="js/view.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="toolbar">
+        <div>
+            <div>
+                <span>
+                    Select type of paint object:
+                </span>
+                <select id="select-object-type">
+                    <option>ball</option>
+                    <option>fish</option>
+                </select>
+            </div>
+            <div>
+                <span>
+                    Select type of object behaviour:
+                </span>
+                <select id="select-update-strategy"></select>
+            </div>
+            <div>
+                <span>
+                    Select ball collision strategy:
+                </span>
+                <select id="select-collision-strategy">
+                    <option value="shrink">ball shrinks other ball</option>
+                    <option value="fade">ball fades other ball</option>
+                    <option value="change_color">ball changes other ball color</option>
+                    <option value="add_cross">ball adds other ball a cross</option>
+                    <option value="fish_convert">ball turns other ball to fish</option>
+                    <option value="change_direction">ball changes other ball direction</option>
+                    <option value="eat">ball eats other ball</option>
+                    <option value="destroy">ball destroys other ball</option>
+                    <option value="stuck">ball makes other ball stuck</option>
+                    <option value="translate">ball moves other ball to opposite side</option>
+                </select>
+            </div>
+            <div class="switch-strategy">
+                <span>Can object switch strategies/change movement behaviour?</span>
+                <input type="checkbox" id="checkbox-switch-strategy"/>
+            </div>
+            <div>
+                <div></div>
+                <button id="btn-load">Load object</button>
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div>
+                Select objects to remove:
+            </div>
+            <div>
+                <select id="select-remove-strategy"></select>
+            </div>
+            <div>
+                <div></div>
+                <button id="btn-remove">Remove objects</button>
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <span>
+                    Which strategy you want to switch?
+                </span>
+                <select id="select-switch-strategy-from"></select>
+            </div>
+            <div>
+                <span>
+                    To which strategy to switch?
+                </span>
+                <select id="select-switch-strategy-to"></select>
+            </div>
+            <div class="warning">
+                NOTE: Only objects that are allowed to switch strategies will switch them.
+            </div>
+            <div>
+                <div></div>
+                <button id="btn-switch">Switch strategies</button>
+                <div></div>
+            </div>
+        </div>
+        <div>
+            <button id="btn-clear">Clear canvas</button>
+        </div>
+    </div>
+
+    <img id="fish-right" src="img/fish_right.png" style="display: none"/>
+    <img id="fish-left" src="img/fish_left.png" style="display: none"/>
+
+    <div class="canvas">
+        <canvas></canvas>
+    </div>
+</body>
+</html>

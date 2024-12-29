@@ -1,0 +1,51 @@
+package edu.rice.comp504.model.strategy.update;
+
+import edu.rice.comp504.model.paintobject.PaintObject;
+
+public class WaterfallStrategy implements IUpdateStrategy {
+    private static IUpdateStrategy ONLY;
+    private IUpdateStrategy diagonal;
+    private IUpdateStrategy vertical;
+
+    /**
+     * Static method for fetching the Singleton instance.
+     */
+    public static IUpdateStrategy getOnly() {
+        if (ONLY == null) {
+            ONLY = new WaterfallStrategy();
+        }
+        return ONLY;
+    }
+
+    private WaterfallStrategy() {
+        diagonal = DiagonalStrategy.getOnly();
+        vertical = VerticalStrategy.getOnly();
+    }
+
+    @Override
+    public String getName() {
+        return "waterfall";
+    }
+
+    @Override
+    public void updateState(PaintObject object) {
+        switch (object.getState()) {
+            case 0:
+                diagonal.updateState(object);
+                object.increaseDiagonalDistance();
+                if (object.getDiagonalDistance() >= 10) {
+                    object.setState(1);
+                    object.resetDiagonalDistance();
+                }
+                break;
+            default:
+                vertical.updateState(object);
+                object.increaseVerticalDistance();
+                if (object.getVerticalDistance() >= 10) {
+                    object.setState(0);
+                    object.resetVerticalDistance();
+                }
+                break;
+        }
+    }
+}
